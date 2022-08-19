@@ -1,11 +1,24 @@
-import logo from './logo.svg';
+import {Component, StrictMode} from 'react';
 import './App.css';
 
 const Header = () => {
   return <h2>Hello World!</h2>
 };
-const Field = () => {
-   const holder = "TypeHere"
+
+// const Field = () => {
+//    const holder = "TypeHere"
+//    const styleField = {
+//       width: '300px'
+//   };
+//    return <input 
+//       placeholder={holder} 
+//       type="text" 
+//       style={styleField}/>
+//       };  
+
+class Field extends Component {
+  render(){
+    const holder = "TypeHere"
    const styleField = {
       width: '300px'
   };
@@ -13,7 +26,10 @@ const Field = () => {
       placeholder={holder} 
       type="text" 
       style={styleField}/>
-};  
+      };  
+  }
+
+
 function Btn() {
   // const text = 'Log in';
    const res = () => {
@@ -23,11 +39,13 @@ function Btn() {
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <StrictMode>
+        <Header/>
+      </StrictMode>
       <Field/>
       <Btn/>
     </div>
   );
 }
-
+export {Header};
 export default App;
